@@ -91,18 +91,19 @@ public class Newton {
         int iterations = scanner.nextInt();
         System.out.println("What angle do you want to find the cosine of in degrees?");
         double angle = scanner.nextDouble()*Math.PI/(double)180;*/
-        System.out.print("Enter number of iterations: ");
+        System.out.print("Enter number of iterations (more iterations generally produces a more accurate graph): ");
         int iterations = scanner.nextInt();
-        System.out.print("Enter starting point: ");
+        System.out.print("Enter a starting x-value (choose a starting point that is well within the function's domain): ");
         double startingReal = scanner.nextDouble();
         double startingImaginary = 0;
         Complex startingPoint = Complex.ofCartesian(startingReal,startingImaginary);
-        System.out.print("Enter starting angle: ");
+        System.out.print("Enter starting angle (angles near 0 and pi may be inaccurate): ");
         double startAngle = scanner.nextDouble();
-        System.out.print("Enter ending angle: ");
+        System.out.print("Enter ending angle (angles near 0 and pi may be inaccurate): ");
         double endAngle = scanner.nextDouble();
-        System.out.print("Enter number of angles to run: ");
-        double totalAngles = scanner.nextInt();
+        System.out.print("Enter number of angles to run (more angles makes a smoother graph): ");
+        int totalAngles = scanner.nextInt();
+        System.out.println("Here are the " + totalAngles + " points of your cosine graph from angles " + startAngle + " to " + endAngle + ".");
         iterateCosine(iterations,startingPoint,Newton::targetCurve,startAngle,endAngle,totalAngles);
         //getCosine(10,.5,newton::targetCurve,120/(double)180*Math.PI);
         //System.out.println(getCosine(2,.5,newton::targetCurve,angle));
