@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="complex">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../commons-numbers/commons-numbers-complex/src/main/java" />
+    </SOURCES>
+  </library>
+</component>

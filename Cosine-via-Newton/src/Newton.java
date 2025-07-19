@@ -1,5 +1,4 @@
 import org.apache.commons.numbers.complex.Complex;
-
 import java.util.Scanner;
 import java.util.function.Function;
 public class Newton {
@@ -92,7 +91,19 @@ public class Newton {
         int iterations = scanner.nextInt();
         System.out.println("What angle do you want to find the cosine of in degrees?");
         double angle = scanner.nextDouble()*Math.PI/(double)180;*/
-        iterateCosine(10,Complex.ofCartesian(1,0),Newton::targetCurve,0,Math.PI,7);
+        System.out.print("Enter number of iterations: ");
+        int iterations = scanner.nextInt();
+        System.out.print("Enter starting point: ");
+        double startingReal = scanner.nextDouble();
+        double startingImaginary = 0;
+        Complex startingPoint = Complex.ofCartesian(startingReal,startingImaginary);
+        System.out.print("Enter starting angle: ");
+        double startAngle = scanner.nextDouble();
+        System.out.print("Enter ending angle: ");
+        double endAngle = scanner.nextDouble();
+        System.out.print("Enter number of angles to run: ");
+        double totalAngles = scanner.nextInt();
+        iterateCosine(iterations,startingPoint,Newton::targetCurve,startAngle,endAngle,totalAngles);
         //getCosine(10,.5,newton::targetCurve,120/(double)180*Math.PI);
         //System.out.println(getCosine(2,.5,newton::targetCurve,angle));
         //System.out.println("The Cosine of f(" + angle + ") approximated after " + iterations + " iterations starting from x = " + startingPoint + " is: " + getCosine(iterations, startingPoint, newton::targetCurve, angle) + ".");
